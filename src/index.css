@@ -201,6 +201,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .amount__total {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding-bottom: 30px;
 }
 .amount__input {
@@ -228,6 +230,43 @@ h1, h2, h3, h4, h5, h6 {
 }
 .arrow_next {
   margin-left: -9px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 240px;
+  height: 6px;
+  border-radius: 4px;
+  filter: drop-shadow(0px 2px 0px rgba(255, 255, 255, 0.19));
+  background-color: rgba(255, 255, 255, 0.1);
+  border-top: 3px solid rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 55px;
+  height: 55px;
+  filter: drop-shadow(0px 2px 0px rgba(0, 0, 0, 0.71));
+  background: url("../../assets/ellipse.png");
+  background-size: contain;
+  cursor: pointer;
+}
+
+.control {
+  cursor: pointer;
+  background: #ffffff;
+  height: 4px;
+  width: 20px;
+  position: relative;
+}
+.control_extra:after {
+  content: "";
+  height: 20px;
+  width: 4px;
+  background: #ffffff;
+  position: absolute;
+  top: -8px;
+  left: 8px;
 }
 
 .autoSettings {

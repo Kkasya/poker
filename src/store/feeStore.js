@@ -16,7 +16,7 @@ class FeeStore {
   setMinBet = () => this.bet = this.minBet;
   setMaxBet = () => this.bet = this.maxBet;
   setBankBet = () => this.bet = this.bank;
-  setHalfBankBet = () => this.bet = this.bank / 2;
+  setHalfBankBet = () => this.bet = Math.floor(this.bank / 2);
 
   get isNotice() {
     return (this.bet < this.lastAmount);
