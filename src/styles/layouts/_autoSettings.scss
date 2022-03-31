@@ -104,11 +104,13 @@ input[type=checkbox] {
 
   &__text {
     text-align: right;
-
   }
 
   &__count {
     margin: 0 10px;
-    text-align: center;
+
+    &_disabled {
+
+    }
   }
 }

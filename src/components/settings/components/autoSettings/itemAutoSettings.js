@@ -1,7 +1,8 @@
 import React from "react";
 import Btn from "../../../btn/btn";
+import {observer} from "mobx-react-lite";
 
-const ItemAutoSettings = ({item}) => {
+const ItemAutoSettings = observer(({item}) => {
 
   const styleNameItem = item.params ? 'text_big' : 'text_small';
 
@@ -9,27 +10,32 @@ const ItemAutoSettings = ({item}) => {
     <div className="itemAutoSettings">
       <div className="element">
         <div className="element__checkbox">
-          <input type="checkbox" checked={item.checked} onChange={item.toggleCheck} id="checkbox"/>
-          <label htmlFor="checkbox"></label>
+          <input type="checkbox" checked={item.isChecked} onChange={item.toggleCheck} id={item.name} />
+          <label htmlFor={item.name}></label>
         </div>
         <p className={`text ${styleNameItem} element__name`}>{item.name}</p>
         <Btn name='i' classBtn='element__btn' callback={item.toggleNotice}/>
       </div>
 
-      <p className="text text_small notice">{item.notice}</p>
+      {item.isNotice && <p className="text text_small notice">{item.notice}</p>}
 
       {item.params && item.params.length && <div className="params">
         {item.params.map((param) => {
-          return <div className="param">
+          return (
+          <div className="param" key={param.text}>
             <span className="text text_middle param__text">{param.text}</span>
-            <input type="number" onChange={param.setParamCount} className="text text_big input param__count"/>
+            <input type="number"
+                   value={item.isChecked ? param.paramCount : ''}
+                   disabled={!item.isChecked}
+                   onChange={(e) => param.setParamCount(e.target.value)}
+                   className={`input param__count text_secondary text_big`}/>
             <span className="text text_middle ">ББ</span>
           </div>
-        })}
+          )})}
         <span className="shape params__shape"></span>
       </div>}
     </div>
   )
-};
+});
 
 export default ItemAutoSettings;

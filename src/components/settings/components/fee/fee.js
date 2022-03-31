@@ -3,12 +3,11 @@ import Bank from "./bank";
 import Amount from "./amount";
 import {fee} from "../../../../common/constants";
 import Btn from "../../../btn/btn";
+import settingsStore from "../../../../store/settingsStore";
 
 const Fee = () => {
 
-  const toggleAutoSettings = () => {
-
-  };
+  const toggleAutoSettings = () => settingsStore.setIsOpenAutoSettings();
 
   return (
     <div className="fee">

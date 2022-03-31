@@ -1,3 +1,8 @@
+.app {
+  background-color: $dark-color;
+  height: 100vh;
+}
+
 .text {
   @include text;
 
@@ -24,6 +29,15 @@
   border-radius: 8px;
   filter: drop-shadow(0px 2px 0px rgba(255,255,255,0.3));
   background-color: #ffffff;
+  color: $dark-color;
+  text-align: right;
+  padding: 15px;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }
 
 .btn {

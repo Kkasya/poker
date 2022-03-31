@@ -1,6 +1,7 @@
 import React from "react";
 import chip from "../../../../assets/chip.png";
 import {fee} from "../../../../common/constants";
+import feeStore from "../../../../store/feeStore";
 
 const Bank = () => {
 
@@ -14,7 +15,7 @@ const Bank = () => {
         </div>
       </div>
 
-      <p className="text text_middle bank__sum">{fee.availableSum} </p>
+      <p className="text text_middle bank__sum">{fee.availableSum} {feeStore.bank} </p>
     </div>
   )
 };
