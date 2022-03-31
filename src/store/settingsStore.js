@@ -9,7 +9,8 @@ class SettingsStore {
   }
 
   setIsOpenAutoSettings = () => this.isOpenAutoSettings = !(this.isOpenAutoSettings);
-  setIsOpenSettings = () => this.isOpenSettings = !(this.isOpenSettings);
+  setOpenSettings = () => this.isOpenSettings = true;
+  setCloseSettings = () => this.isOpenSettings = false;
 }
 
 export default new SettingsStore();
