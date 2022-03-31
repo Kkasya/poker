@@ -5,6 +5,7 @@ import {observer} from "mobx-react-lite";
 const ItemAutoSettings = observer(({item}) => {
 
   const styleNameItem = item.params ? 'text_big' : 'text_small';
+  const styleNotice = item.isNotice ? 'block_expanded' : 'block_none';
 
   return (
     <div className="itemAutoSettings">
@@ -14,10 +15,10 @@ const ItemAutoSettings = observer(({item}) => {
           <label htmlFor={item.name}></label>
         </div>
         <p className={`text ${styleNameItem} element__name`}>{item.name}</p>
-        <Btn name='i' classBtn='element__btn' callback={item.toggleNotice}/>
+        <Btn name='i' classBtn='element__btn btn__anim' callback={item.toggleNotice}/>
       </div>
 
-      {item.isNotice && <p className="text text_small notice">{item.notice}</p>}
+      <p className={`text text_small notice ${styleNotice}`}>{item.notice}</p>
 
       {item.params && item.params.length && <div className="params">
         {item.params.map((param) => {

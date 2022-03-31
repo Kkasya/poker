@@ -128,6 +128,42 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+.block_hidden {
+  opacity: 0;
+  transition: 1s;
+}
+
+.block_visible {
+  opacity: 1;
+  transition: 3s;
+}
+
+.block_none {
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.5s, max-height 0.5s;
+}
+
+.block_expanded {
+  max-height: 100px;
+  opacity: 1;
+  display: block;
+  transition: opacity 0.5s, max-height 0.5s;
+}
+
+.btn__anim {
+  background-image: linear-gradient(90deg, #333333 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  transition: background 300ms ease-in-out;
+}
+
+.btn__anim:hover {
+  background-position: 0;
+  transform: scale(1.1);
+  transition: transform 300ms ease-in-out;
+}
+
 .settings {
   padding: 20px 65px;
 }
@@ -219,6 +255,12 @@ h1, h2, h3, h4, h5, h6 {
 .extra__btn {
   width: 100%;
 }
+.extra__btn:hover .arrow {
+  width: 18px;
+  height: 18px;
+  border-width: 4px;
+  transition: 0.5s;
+}
 
 .arrow {
   display: inline-block;
@@ -294,9 +336,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   font-style: italic;
   font-family: "Times New Roman", sans-serif;
-}
-.element__btn:hover {
-  opacity: 0.8;
 }
 .element__checkbox {
   width: 36px;

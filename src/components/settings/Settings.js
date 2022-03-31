@@ -7,7 +7,12 @@ import settingsStore from "../../store/settingsStore";
 
 const Settings = observer(() => {
 
-  const closeSettings = () => settingsStore.closeSettings();
+  const closeSettings = () => {
+    settingsStore.setIsOpenSettings();
+    setTimeout(() => {
+      settingsStore.setIsOpenSettings();
+    }, 1500);
+  }
   const openCashier = () => {};
 
   return (

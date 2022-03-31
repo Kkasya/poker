@@ -45,7 +45,8 @@ const AutoSettings = observer(() => {
     ...save,
     isChecked: autoSettingsStore.isCheckedSave,
     toggleCheck: autoSettingsStore.toggleIsCheckedSave,
-    isNotice: autoSettingsStore.isNoticeSave
+    isNotice: autoSettingsStore.isNoticeSave,
+    toggleNotice: autoSettingsStore.toggleIsNoticeSave,
   };
 
   return (

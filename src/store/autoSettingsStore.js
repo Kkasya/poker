@@ -21,14 +21,27 @@ class AutoSettingsStore {
   setPurchaseCount = (number) => this.purchaseCount = number;
   setMyCount = (number) => this.myCount = number;
 
-  toggleIsNoticeSeat = () => this.isNoticeSeat = !this.isNoticeSeat;
-  toggleIsNoticePurchase = () => this.isNoticePurchase = !this.isNoticePurchase;
-  toggleIsNoticeSave = () => this.isNoticeSave = !this.isNoticeSave;
+  toggleIsNoticeSeat = () => {
+    this.isNoticePurchase = false;
+    this.isNoticeSave = false;
+    this.isNoticeSeat = !this.isNoticeSeat;
+  };
+
+  toggleIsNoticePurchase = () => {
+    this.isNoticeSeat = false;
+    this.isNoticeSave = false;
+    this.isNoticePurchase = !this.isNoticePurchase;
+  };
+
+  toggleIsNoticeSave = () => {
+    this.isNoticeSeat = false;
+    if(this.isNoticePurchase) this.isNoticePurchase = false;
+    this.isNoticeSave = !this.isNoticeSave;
+  };
 
   toggleIsCheckedSeat = () => this.isCheckedSeat = !this.isCheckedSeat;
   toggleIsCheckedPurchase = () => this.isCheckedPurchase = !this.isCheckedPurchase;
   toggleIsCheckedSave = () => this.isCheckedSave = !this.isCheckedSave;
-
 }
 
 export default new AutoSettingsStore();
