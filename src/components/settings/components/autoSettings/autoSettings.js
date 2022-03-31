@@ -1,6 +1,6 @@
 import React from "react";
 import ItemAutoSettings from "./itemAutoSettings";
-import {purchase} from "../../../../common/variables";
+import {purchase, save, seat} from "../../../../common/constants";
 
 const AutoSettings = () => {
 
@@ -16,9 +16,9 @@ const setParamCount = () => {
 
   };
 
-  const purchaseSettings = {...purchase, checked: true, toggleCheck: toggleCheck, toggleNotice: toggleNotice, setParamCount: setParamCount};
-  const seatSettings = {...purchase, checked: true, toggleCheck: toggleCheck, toggleNotice: toggleNotice, setParamCount: setParamCount};
-  const saveSettings = {...purchase, checked: true, toggleCheck: toggleCheck, toggleNotice: toggleNotice};
+  const purchaseSettings = {...purchase, checked: false, toggleCheck: toggleCheck, toggleNotice: toggleNotice, setParamCount: setParamCount};
+  const seatSettings = {...seat, checked: true, toggleCheck: toggleCheck, toggleNotice: toggleNotice, setParamCount: setParamCount};
+  const saveSettings = {...save, checked: true, toggleCheck: toggleCheck, toggleNotice: toggleNotice};
 
   return (
     <div className="autoSettings">

@@ -1,5 +1,5 @@
 import React from "react";
-import {fee} from "../../../../common/variables";
+import {fee} from "../../../../common/constants";
 import Btn from "../../../btn/btn";
 
 const Amount = () => {
@@ -24,7 +24,7 @@ const Amount = () => {
   return (
     <div className="amount">
       <div className="amount__total">
-        <input type="amount__number"/>
+        <input type="number" className="input amount__input text_secondary text_middle"/>
         <div className="amount__scroll"></div>
       </div>
       <div className="amount__btns">
@@ -33,7 +33,7 @@ const Amount = () => {
         <Btn name='Bank' classBtn='amount__btn' callback={setBankAmount} />
         <Btn name='1/2 Bank' classBtn='amount__btn' callback={setHalfBankAmount} />
       </div>
-      <p className="amount__warning"> {fee.warning} </p>
+      <p className="amount__warning text text_small"> {fee.warning} </p>
     </div>
   )
 };

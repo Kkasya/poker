@@ -1,0 +1,114 @@
+.autoSettings {
+  padding: 20px 0 0 40px;
+  max-width: 482px;
+}
+
+.element {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-bottom: 10px;
+
+  &__name {
+    padding: 0 17px 0 40px;
+    max-width: 320px;
+  }
+
+  &__btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    filter: drop-shadow(0px 3px 1.5px #000000);
+    background-image: linear-gradient(180deg, #303030 0%, rgba(48, 48, 48, 0) 100%);
+    font-size: 40px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: "Times New Roman", sans-serif;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__checkbox {
+    width: 36px;
+    height: 36px;
+    position: relative;
+
+    & label {
+      cursor: pointer;
+      position: absolute;
+      width: 36px;
+      height: 36px;
+      top: 0;
+      border-radius: 9px;
+      filter: drop-shadow(0px 1px 0px rgba(255, 255, 255, 0.13));
+      background: linear-gradient(0deg, #ebebeb 0%, rgba(158, 158, 158, 0) 100%), linear-gradient(#fcfff4, #fcfff4);
+
+      &:after {
+        filter: alpha(opacity=0);
+        opacity: 0;
+        content: '';
+        position: absolute;
+        background: transparent;
+        top: 8px;
+        left: 4px;
+        border: 7px solid $dark-color;
+        border-top: none;
+        border-right: none;
+        width: 28px;
+        height: 18px;
+        transform: rotate(-45deg);
+      }
+
+      &:hover::after {
+        filter: alpha(opacity=30);
+        opacity: 0.3;
+      }
+    }
+
+    & input[type=checkbox]:checked + label:after {
+      filter: alpha(opacity=100);
+      opacity: 1;
+    }
+  }
+
+}
+
+input[type=checkbox] {
+  visibility: hidden;
+}
+
+.notice {
+  padding-bottom: 10px;
+}
+
+.params {
+  display: flex;
+  flex-direction: column;
+
+  & > *:first-child > *:first-child {
+    max-width: 230px;
+  }
+
+  &__shape {
+    margin: 20px 0;
+  }
+}
+
+.param {
+  display: flex;
+  justify-content: right;
+  padding-bottom: 10px;
+  align-items: center;
+
+  &__text {
+    text-align: right;
+
+  }
+
+  &__count {
+    margin: 0 10px;
+    text-align: center;
+  }
+}

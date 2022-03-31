@@ -1,5 +1,8 @@
-@import "components/app/app";
-@import "components/settings/settings";
-@import "components/popup/popup";
-@import "components/settings/components/fee/fee";
-@import "components/settings/components/autoSettings/autoSettings";
+@import "styles/common/reset";
+@import "styles/common/variables";
+@import "styles/common/mixins";
+@import "styles/layouts/app";
+@import "styles/layouts/settings";
+@import "styles/layouts/popup";
+@import "styles/layouts/fee";
+@import "styles/layouts/autoSettings";

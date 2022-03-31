@@ -15,12 +15,15 @@ const Settings = () => {
 
   return (
     <div className="settings">
-      <Fee />
-      <AutoSettings />
-      <div className="btn settings__btns">
-        <Btn name='Ок' classBtn='settings__btn' callback={closeSettings} />
-        <Btn name='Cashier' classBtn='settings__btn' callback={openCashier} />
-        <Btn name='Cancel' classBtn='settings__btn' callback={closeSettings} />
+      <div className="settings__inner">
+        <Fee />
+        <span className="shape settings__shape"></span>
+        <AutoSettings />
+      </div>
+      <div className="settings__btns">
+        <Btn name='Ок' classBtn='btn settings__btn' callback={closeSettings} />
+        <Btn name='Cashier' classBtn='btn settings__btn' callback={openCashier} />
+        <Btn name='Cancel' classBtn='btn settings__btn' callback={closeSettings} />
       </div>
     </div>
   );

@@ -1,0 +1,48 @@
+.text {
+  @include text;
+
+  &_secondary {
+    color: $text-color-secondary;
+  }
+
+  &_big {
+    font-size: $text-big;
+  }
+
+  &_middle {
+    font-size: $text-middle;
+  }
+
+  &_small {
+    font-size: $text-small;
+  }
+}
+
+.input {
+  height: 44px;
+  width: 85px;
+  border-radius: 8px;
+  filter: drop-shadow(0px 2px 0px rgba(255,255,255,0.3));
+  background-color: #ffffff;
+}
+
+.btn {
+  width: 109px;
+  height: 51px;
+  border-radius: 13px;
+  filter: drop-shadow(0px 3px 1.5px #000000);
+  background-image: linear-gradient(180deg, #303030 0%, rgba(48,48,48,0) 100%);
+  background-color: $btn-color;
+  color: $text-color;
+  font-size: $text-big;
+
+  @include text;
+}
+
+.shape {
+  height: 1px;
+  width: 451px;
+  background-color: $shape-color;
+}
+
+
