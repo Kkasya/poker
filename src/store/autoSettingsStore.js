@@ -1,19 +1,21 @@
 import {makeAutoObservable} from "mobx";
+import {defaultSettings} from "../common/constants";
 
 const localSettings = JSON.parse(localStorage.getItem('autoSettings'));
+const currentSettings = localSettings || defaultSettings;
 
 class AutoSettingsStore {
-  seatCount = localSettings && localSettings.seatCount || 2;
-  purchaseCount = localSettings && localSettings.purchaseCount || 2;
-  myCount = localSettings && localSettings.myCount || 2;
+  seatCount = currentSettings.seatCount;
+  purchaseCount = currentSettings.purchaseCount;
+  myCount = currentSettings.myCount;
 
-  isNoticeSeat = localSettings && localSettings.isNoticeSeat || false;
-  isNoticePurchase = localSettings && localSettings.isNoticePurchase || false;
-  isNoticeSave = localSettings && localSettings.isNoticeSave || false;
+  isNoticeSeat = currentSettings.isNoticeSeat;
+  isNoticePurchase = currentSettings.isNoticePurchase;
+  isNoticeSave = currentSettings.isNoticeSave;
 
-  isCheckedSeat = localSettings && localSettings.isCheckedSeat || false;
-  isCheckedPurchase = localSettings && localSettings.isCheckedPurchase || false;
-  isCheckedSave = localSettings && localSettings.isCheckedSave || false;
+  isCheckedSeat = currentSettings.isCheckedSeat;
+  isCheckedPurchase = currentSettings.isCheckedPurchase;
+  isCheckedSave = currentSettings.isCheckedSave;
 
   constructor() {
     makeAutoObservable(this);

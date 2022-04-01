@@ -25,4 +25,16 @@ const save = {
   notice: 'Я хочу пользоваться функцией сохранения и понимаю, что она будет автоматически сохранять настройки после выхода из приложения.',
 };
 
-export {fee, purchase, seat, save};
+const defaultSettings = {
+  seatCount: 2,
+  purchaseCount: 2,
+  myCount: 2,
+  isNoticeSeat: false,
+  isNoticePurchase: false,
+  isNoticeSave: false,
+  isCheckedSeat: false,
+  isCheckedPurchase: false,
+  isCheckedSave: false,
+};
+
+export {fee, purchase, seat, save, defaultSettings};
