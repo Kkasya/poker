@@ -4,7 +4,6 @@ import Btn from "../../../btn/btn";
 import {observer} from "mobx-react-lite";
 import feeStore from "../../../../store/feeStore";
 import Slider from "./slider";
-import settingsStore from "../../../../store/settingsStore";
 
 const Amount = observer(() => {
 

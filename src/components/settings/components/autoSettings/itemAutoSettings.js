@@ -6,6 +6,7 @@ const ItemAutoSettings = observer(({item}) => {
 
   const styleNameItem = item.params ? 'text_big' : 'text_small';
   const styleNotice = item.isNotice ? 'block_expanded' : 'block_none';
+  const isParams = item.params && item.params.length;
 
   return (
     <div className="itemAutoSettings">
@@ -20,7 +21,7 @@ const ItemAutoSettings = observer(({item}) => {
 
       <p className={`text text_small notice ${styleNotice}`}>{item.notice}</p>
 
-      {item.params && item.params.length && <div className="params">
+      {isParams && <div className="params">
         {item.params.map((param) => {
           return (
             <div className="param" key={param.text}>
