@@ -12,8 +12,8 @@ const Fee = () => {
   return (
     <div className="fee">
       <h3 className="text text_big fee__headline">{fee.headline}</h3>
-      <Bank />
-      <Amount />
+      <Bank/>
+      <Amount/>
       <Btn name={fee.nameExtraBtn} classBtn='extra__btn' callback={toggleAutoSettings}>
         <span className="arrow"></span>
         <span className="arrow arrow_next"></span>

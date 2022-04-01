@@ -3,8 +3,8 @@ import './index.scss';
 import App from './components/app/App';
 import ReactDOMClient from "react-dom/client";
 
-ReactDOMClient.createRoot( document.getElementById('root')).render(
+ReactDOMClient.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <App/>
   </React.StrictMode>
 );

@@ -2,6 +2,10 @@
   padding-right: 40px;
   max-width: 508px;
 
+  @media screen and (max-width: $width-big) {
+    padding-right: 0;
+  }
+
   &__headline {
     line-height: 17px;
     text-align: center;
@@ -65,9 +69,9 @@
 
   &:hover {
     .arrow {
-      width: 18px;
-      height: 18px;
-      border-width: 4px;
+      width: 17px;
+      height: 17px;
+      border-width: 3.5px;
       transition: 0.5s;
     }
   }

@@ -4,12 +4,27 @@
   &__inner {
     display: flex;
     padding-bottom: 35px;
+
+    @media screen and (max-width: $width-big) {
+      flex-direction: column;
+    }
+  }
+
+
+  @media screen and (max-width: $width-middle) {
+    padding: 20px 5px;
   }
 
   &__shape {
     width: 1px;
     height: 496px;
     margin-top: 20px;
+
+
+    @media screen and (max-width: $width-big) {
+      width: 496px;
+      height: 1px;
+    }
   }
 
   &__btns {

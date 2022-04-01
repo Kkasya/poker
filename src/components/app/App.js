@@ -9,7 +9,7 @@ const App = observer(() => {
 
   useEffect(() => {
     settingsStore.setOpenSettings();
-     }, []);
+  }, []);
 
   window.addEventListener('beforeunload', (event) => {
     const autoSettings = {

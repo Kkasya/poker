@@ -11,11 +11,11 @@ const ItemAutoSettings = observer(({item}) => {
     <div className="itemAutoSettings">
       <div className="element">
         <div className="element__checkbox">
-          <input type="checkbox" checked={item.isChecked} onChange={item.toggleCheck} id={item.name} />
+          <input type="checkbox" checked={item.isChecked} onChange={item.toggleCheck} id={item.name}/>
           <label htmlFor={item.name}></label>
         </div>
         <p className={`text ${styleNameItem} element__name`}>{item.name}</p>
-        <Btn name='i' classBtn='element__btn btn__anim' callback={item.toggleNotice}/>
+        <Btn name='i' classBtn='element__btn' callback={item.toggleNotice}/>
       </div>
 
       <p className={`text text_small notice ${styleNotice}`}>{item.notice}</p>
@@ -23,16 +23,17 @@ const ItemAutoSettings = observer(({item}) => {
       {item.params && item.params.length && <div className="params">
         {item.params.map((param) => {
           return (
-          <div className="param" key={param.text}>
-            <span className="text text_middle param__text">{param.text}</span>
-            <input type="number"
-                   value={item.isChecked ? param.paramCount : ''}
-                   disabled={!item.isChecked}
-                   onChange={(e) => param.setParamCount(e.target.value)}
-                   className={`input param__count text_secondary text_big`}/>
-            <span className="text text_middle ">ББ</span>
-          </div>
-          )})}
+            <div className="param" key={param.text}>
+              <span className="text text_middle param__text">{param.text}</span>
+              <input type="number"
+                     value={item.isChecked ? param.paramCount : ''}
+                     disabled={!item.isChecked}
+                     onChange={(e) => param.setParamCount(e.target.value)}
+                     className={`input param__count text_secondary text_big`}/>
+              <span className="text text_middle ">ББ</span>
+            </div>
+          )
+        })}
         <span className="shape params__shape"></span>
       </div>}
     </div>

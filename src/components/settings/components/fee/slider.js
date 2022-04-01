@@ -11,7 +11,7 @@ const Slider = observer(({value, changeValue}) => {
   return (
     <>
       <span className="control"
-            onClick={() => setValue( - 1)}>
+            onClick={() => setValue(-1)}>
       </span>
       <input type="range"
              id="slider"
